@@ -46,34 +46,6 @@ final class NetworkService {
         
     }
     
-    func requestScreenshots(id: Int, completion: @escaping (Result<ScreenshotsResponseModel, Error>) -> Void) {
-        guard var urlComponents = URLComponents(string: APIContants.baseUrl.rawValue + APIContants.games.rawValue + "/" + String(id) + "/" + APIContants.screenshots.rawValue) else { return }
-        
-        urlComponents.queryItems =
-        [URLQueryItem(name: APIContants.key.rawValue, value: APIContants.apiKey.rawValue)]
-        
-        guard let url = urlComponents.url else { return }
-        
-        print(url)
-        
-        var request = URLRequest(url: url)
-        
-        request.httpMethod = "GET"
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let jsonData = data {
-                do {
-                    
-                    let screenshotsResponse = try JSONDecoder().decode(ScreenshotsResponseModel.self, from: jsonData)
-                    completion(.success(screenshotsResponse))
-                } catch {
-                    
-                    completion(.failure(error))
-                }
-            }
-        }.resume()
-    }
-    
     func requestSearched() {
         
     }
@@ -85,8 +57,6 @@ final class NetworkService {
         [URLQueryItem(name: APIContants.key.rawValue, value: APIContants.apiKey.rawValue)]
         
         guard let url = urlComponents.url else { return }
-        
-        print(url)
         
         var request = URLRequest(url: url)
         
