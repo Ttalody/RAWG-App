@@ -37,6 +37,9 @@ struct GameModel: Decodable {
     let playtime: Int?
     let suggestionsCount: Int?
     let updated: String?
+    let dominantColor: String?
+    let saturatedColor: String?
+    let screenshots: [ScreenshotsModel]?
     let esrbRating: ESRBRatingModel?
     let platforms: [PlatformInfoModel]?
     
@@ -56,6 +59,9 @@ struct GameModel: Decodable {
         case playtime
         case suggestionsCount = "suggestions_count"
         case updated
+        case dominantColor = "dominant_color"
+        case saturatedColor = "saturated_color"
+        case screenshots = "short_screenshots"
         case esrbRating = "esrb_rating"
         case platforms
     }

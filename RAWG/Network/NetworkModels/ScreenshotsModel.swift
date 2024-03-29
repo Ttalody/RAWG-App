@@ -7,16 +7,7 @@
 
 import Foundation
 
-struct ScreenshotsResponseModel: Decodable {
-    let count: Int?
-    let next: String?
-    let previous: String?
-    let results: [ScreenshotsModel]?
-}
-
 struct ScreenshotsModel: Decodable {
     let id: Int?
     let image: String?
-    let width: Int?
-    let height: Int?
 }

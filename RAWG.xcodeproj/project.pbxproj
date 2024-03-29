@@ -43,6 +43,11 @@
 		75C041282BAF0ACD00EE0636 /* RequirementsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C041272BAF0ACD00EE0636 /* RequirementsModel.swift */; };
 		75E9EC312BB347F800131FB8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC302BB347F800131FB8 /* NetworkError.swift */; };
 		75E9EC352BB5C71B00131FB8 /* DateFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC342BB5C71B00131FB8 /* DateFormatterService.swift */; };
+		75E9EC372BB723C000131FB8 /* DeveloperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC362BB723C000131FB8 /* DeveloperModel.swift */; };
+		75E9EC392BB723C800131FB8 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC382BB723C800131FB8 /* TagModel.swift */; };
+		75E9EC3C2BB727FF00131FB8 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC3B2BB727FF00131FB8 /* String+.swift */; };
+		75E9EC3E2BB72CAD00131FB8 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC3D2BB72CAD00131FB8 /* UIColor+.swift */; };
+		75E9EC402BB72DCA00131FB8 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC3F2BB72DCA00131FB8 /* DetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +88,11 @@
 		75C041272BAF0ACD00EE0636 /* RequirementsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsModel.swift; sourceTree = "<group>"; };
 		75E9EC302BB347F800131FB8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		75E9EC342BB5C71B00131FB8 /* DateFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterService.swift; sourceTree = "<group>"; };
+		75E9EC362BB723C000131FB8 /* DeveloperModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperModel.swift; sourceTree = "<group>"; };
+		75E9EC382BB723C800131FB8 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
+		75E9EC3B2BB727FF00131FB8 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		75E9EC3D2BB72CAD00131FB8 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		75E9EC3F2BB72DCA00131FB8 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				759050252BA1F66C00CDFD00 /* ScreenshotCollectionViewCell */,
+				75E9EC3F2BB72DCA00131FB8 /* DetailsViewModel.swift */,
 				7590501F2BA0C67D00CDFD00 /* DetailsViewController.swift */,
 				759050202BA0C67D00CDFD00 /* DetailsViewController.xib */,
 			);
@@ -153,6 +164,7 @@
 		75BF41802B8BA2F20016EAAC /* RAWG */ = {
 			isa = PBXGroup;
 			children = (
+				75E9EC3A2BB727EE00131FB8 /* Extensions */,
 				75E9EC2F2BB347DD00131FB8 /* Heplers */,
 				75BF41B42B8CE36F0016EAAC /* Network */,
 				75BF41B22B8CE3120016EAAC /* Modules */,
@@ -162,8 +174,6 @@
 				75BF418F2B8BA2F50016EAAC /* LaunchScreen.storyboard */,
 				75BF41922B8BA2F50016EAAC /* Info.plist */,
 				75BF418A2B8BA2F20016EAAC /* RAWG.xcdatamodeld */,
-				75BF419A2B8BB90E0016EAAC /* MainTabBarController.swift */,
-				75BF41B02B8CD7ED0016EAAC /* MainTabBarController.xib */,
 			);
 			path = RAWG;
 			sourceTree = "<group>";
@@ -171,6 +181,7 @@
 		75BF41B22B8CE3120016EAAC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				75E9EC412BB72E2A00131FB8 /* MainTabBarController */,
 				75BF41B32B8CE31D0016EAAC /* HomeViewController */,
 				75E9EC322BB34CDC00131FB8 /* SearchViewController */,
 				75E9EC332BB34CEB00131FB8 /* FeaturedViewController */,
@@ -213,6 +224,8 @@
 				75C041232BAF0A9600EE0636 /* PlatformInfoModel.swift */,
 				75C041252BAF0ABA00EE0636 /* PlatformModel.swift */,
 				75C041272BAF0ACD00EE0636 /* RequirementsModel.swift */,
+				75E9EC362BB723C000131FB8 /* DeveloperModel.swift */,
+				75E9EC382BB723C800131FB8 /* TagModel.swift */,
 			);
 			path = NetworkModels;
 			sourceTree = "<group>";
@@ -242,6 +255,24 @@
 				75BF41AD2B8BD7CE0016EAAC /* FeaturedViewController.xib */,
 			);
 			path = FeaturedViewController;
+			sourceTree = "<group>";
+		};
+		75E9EC3A2BB727EE00131FB8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				75E9EC3B2BB727FF00131FB8 /* String+.swift */,
+				75E9EC3D2BB72CAD00131FB8 /* UIColor+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		75E9EC412BB72E2A00131FB8 /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				75BF419A2B8BB90E0016EAAC /* MainTabBarController.swift */,
+				75BF41B02B8CD7ED0016EAAC /* MainTabBarController.xib */,
+			);
+			path = MainTabBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,8 +359,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E9EC392BB723C800131FB8 /* TagModel.swift in Sources */,
 				75BF42102B94C6450016EAAC /* GameTableViewCell.swift in Sources */,
 				75BF41AA2B8BD7B70016EAAC /* SearchViewController.swift in Sources */,
+				75E9EC372BB723C000131FB8 /* DeveloperModel.swift in Sources */,
 				75C041262BAF0ABA00EE0636 /* PlatformModel.swift in Sources */,
 				75BF41822B8BA2F20016EAAC /* AppDelegate.swift in Sources */,
 				75BF42032B8E15930016EAAC /* CollectionViewCell.swift in Sources */,
@@ -343,6 +376,7 @@
 				75C041222BAF0A6400EE0636 /* ESRBRatingModel.swift in Sources */,
 				75BF420D2B94BD030016EAAC /* HomeViewModel.swift in Sources */,
 				75C041202BAF0A2000EE0636 /* RatingsModel.swift in Sources */,
+				75E9EC402BB72DCA00131FB8 /* DetailsViewModel.swift in Sources */,
 				759050282BA1F6A200CDFD00 /* ScreenshotCollectionViewCell.swift in Sources */,
 				75BF42082B8E21080016EAAC /* APIConstants.swift in Sources */,
 				75BF41842B8BA2F20016EAAC /* SceneDelegate.swift in Sources */,
@@ -352,6 +386,8 @@
 				75C041242BAF0A9600EE0636 /* PlatformInfoModel.swift in Sources */,
 				75C041282BAF0ACD00EE0636 /* RequirementsModel.swift in Sources */,
 				75BF41A22B8BD0330016EAAC /* HomeViewController.swift in Sources */,
+				75E9EC3E2BB72CAD00131FB8 /* UIColor+.swift in Sources */,
+				75E9EC3C2BB727FF00131FB8 /* String+.swift in Sources */,
 				759050212BA0C67D00CDFD00 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
