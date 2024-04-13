@@ -41,6 +41,7 @@
 		75C041242BAF0A9600EE0636 /* PlatformInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C041232BAF0A9600EE0636 /* PlatformInfoModel.swift */; };
 		75C041262BAF0ABA00EE0636 /* PlatformModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C041252BAF0ABA00EE0636 /* PlatformModel.swift */; };
 		75C041282BAF0ACD00EE0636 /* RequirementsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C041272BAF0ACD00EE0636 /* RequirementsModel.swift */; };
+		75C1784D2BCB48C2004F31A5 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C1784C2BCB48C2004F31A5 /* UITableView+.swift */; };
 		75E9EC312BB347F800131FB8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC302BB347F800131FB8 /* NetworkError.swift */; };
 		75E9EC352BB5C71B00131FB8 /* DateFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC342BB5C71B00131FB8 /* DateFormatterService.swift */; };
 		75E9EC372BB723C000131FB8 /* DeveloperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC362BB723C000131FB8 /* DeveloperModel.swift */; };
@@ -92,6 +93,7 @@
 		75C041232BAF0A9600EE0636 /* PlatformInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformInfoModel.swift; sourceTree = "<group>"; };
 		75C041252BAF0ABA00EE0636 /* PlatformModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformModel.swift; sourceTree = "<group>"; };
 		75C041272BAF0ACD00EE0636 /* RequirementsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsModel.swift; sourceTree = "<group>"; };
+		75C1784C2BCB48C2004F31A5 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		75E9EC302BB347F800131FB8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		75E9EC342BB5C71B00131FB8 /* DateFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterService.swift; sourceTree = "<group>"; };
 		75E9EC362BB723C000131FB8 /* DeveloperModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperModel.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			children = (
 				75E9EC3B2BB727FF00131FB8 /* String+.swift */,
 				75E9EC3D2BB72CAD00131FB8 /* UIColor+.swift */,
+				75C1784C2BCB48C2004F31A5 /* UITableView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				75BF419C2B8BB90E0016EAAC /* MainTabBarController.swift in Sources */,
 				75BF42062B8E18640016EAAC /* NetworkService.swift in Sources */,
 				75BF420B2B8E40220016EAAC /* GameResponseModel.swift in Sources */,
+				75C1784D2BCB48C2004F31A5 /* UITableView+.swift in Sources */,
 				75BF418C2B8BA2F20016EAAC /* RAWG.xcdatamodeld in Sources */,
 				75E9EC312BB347F800131FB8 /* NetworkError.swift in Sources */,
 				75C0411E2BAB415F00EE0636 /* GameDetailsModel.swift in Sources */,

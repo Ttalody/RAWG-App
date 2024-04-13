@@ -36,6 +36,7 @@ class MainTabBarController: UITabBarController {
         navigationController.navigationBar.barStyle = .black
         navigationController.hidesBarsOnSwipe = true
         
+        
         return navigationController
     }
 }

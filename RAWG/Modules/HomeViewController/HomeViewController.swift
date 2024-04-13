@@ -18,12 +18,23 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var collectionView: UICollectionView!
+    private var viewModel: HomeViewModel!
+    
+    @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private var collectionView: UICollectionView!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel = HomeViewModel()
+        
+        viewModel.gameListDidChange = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+                self?.collectionView.reloadData()
+            }
+        }
         
         NetworkService.shared.requestGames { result in
             switch result {
@@ -32,11 +43,11 @@ class HomeViewController: UIViewController {
             }
         }
         
-        setupListTableView()
+        viewModel.loadGameList()
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: String(describing: CollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: CollectionViewCell.identifier)
+        setupListTableView()
+        setupTrendingCollectionView()
+        
         
     }
     
@@ -47,6 +58,12 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: String(describing: GameTableViewCell.self), bundle: nil), forCellReuseIdentifier: GameTableViewCell.identifier)
+    }
+    
+    private func setupTrendingCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: String(describing: CollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: CollectionViewCell.identifier)
     }
 
 }
@@ -60,15 +77,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GameTableViewCell.identifier, for: indexPath) as? GameTableViewCell else { return UITableViewCell()}
         cell.configure(game: games?[indexPath.row])
         
-        cell.needsUpdateConstraints()
-        cell.updateConstraintsIfNeeded()
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailsVC = DetailsViewController(nibName: String(describing: DetailsViewController.self), bundle: nil)
         detailsVC.game = games?[indexPath.row]
-        self.present(detailsVC, animated: true)
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(detailsVC, animated: true)
     }
 
     
