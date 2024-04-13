@@ -32,14 +32,21 @@ class HomeViewController: UIViewController {
             }
         }
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: String(describing: GameTableViewCell.self), bundle: nil), forCellReuseIdentifier: GameTableViewCell.identifier)
+        setupListTableView()
         
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: String(describing: CollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: CollectionViewCell.identifier)
         
+    }
+    
+    private func setupListTableView() {
+        tableView.rowHeight = UITableView.automaticDimension
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: String(describing: GameTableViewCell.self), bundle: nil), forCellReuseIdentifier: GameTableViewCell.identifier)
     }
 
 }
@@ -52,6 +59,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GameTableViewCell.identifier, for: indexPath) as? GameTableViewCell else { return UITableViewCell()}
         cell.configure(game: games?[indexPath.row])
+        
+        cell.needsUpdateConstraints()
+        cell.updateConstraintsIfNeeded()
         return cell
     }
     

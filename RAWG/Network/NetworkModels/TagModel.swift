@@ -8,8 +8,8 @@
 import Foundation
 
 struct TagModel: Decodable {
-    let id: Int?
-    let name: String?
+    let id: Int
+    let name: String
     let slug: String?
     let gamesCount: Int?
     let bgImage: String?

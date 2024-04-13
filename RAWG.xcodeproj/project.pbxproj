@@ -48,6 +48,12 @@
 		75E9EC3C2BB727FF00131FB8 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC3B2BB727FF00131FB8 /* String+.swift */; };
 		75E9EC3E2BB72CAD00131FB8 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC3D2BB72CAD00131FB8 /* UIColor+.swift */; };
 		75E9EC402BB72DCA00131FB8 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC3F2BB72DCA00131FB8 /* DetailsViewModel.swift */; };
+		75E9EC4E2BC994DC00131FB8 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC4C2BC994DC00131FB8 /* DescriptionTableViewCell.swift */; };
+		75E9EC4F2BC994DC00131FB8 /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E9EC4D2BC994DC00131FB8 /* DescriptionTableViewCell.xib */; };
+		75E9EC522BC994EC00131FB8 /* PlatformTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC502BC994EC00131FB8 /* PlatformTableViewCell.swift */; };
+		75E9EC532BC994EC00131FB8 /* PlatformTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E9EC512BC994EC00131FB8 /* PlatformTableViewCell.xib */; };
+		75E9EC562BC996E400131FB8 /* BasicInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC542BC996E400131FB8 /* BasicInfoTableViewCell.swift */; };
+		75E9EC572BC996E400131FB8 /* BasicInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E9EC552BC996E400131FB8 /* BasicInfoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +99,12 @@
 		75E9EC3B2BB727FF00131FB8 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		75E9EC3D2BB72CAD00131FB8 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		75E9EC3F2BB72DCA00131FB8 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		75E9EC4C2BC994DC00131FB8 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		75E9EC4D2BC994DC00131FB8 /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		75E9EC502BC994EC00131FB8 /* PlatformTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformTableViewCell.swift; sourceTree = "<group>"; };
+		75E9EC512BC994EC00131FB8 /* PlatformTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlatformTableViewCell.xib; sourceTree = "<group>"; };
+		75E9EC542BC996E400131FB8 /* BasicInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoTableViewCell.swift; sourceTree = "<group>"; };
+		75E9EC552BC996E400131FB8 /* BasicInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicInfoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +140,7 @@
 		759050232BA0C71100CDFD00 /* DetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				75E9EC422BC98AD200131FB8 /* ContentTableViewCells */,
 				759050252BA1F66C00CDFD00 /* ScreenshotCollectionViewCell */,
 				75E9EC3F2BB72DCA00131FB8 /* DetailsViewModel.swift */,
 				7590501F2BA0C67D00CDFD00 /* DetailsViewController.swift */,
@@ -275,6 +288,43 @@
 			path = MainTabBarController;
 			sourceTree = "<group>";
 		};
+		75E9EC422BC98AD200131FB8 /* ContentTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				75E9EC4B2BC9941C00131FB8 /* DescriptionCell */,
+				75E9EC442BC98B0C00131FB8 /* PlatformCell */,
+				75E9EC432BC98AE400131FB8 /* BasicInfoCell */,
+			);
+			path = ContentTableViewCells;
+			sourceTree = "<group>";
+		};
+		75E9EC432BC98AE400131FB8 /* BasicInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				75E9EC542BC996E400131FB8 /* BasicInfoTableViewCell.swift */,
+				75E9EC552BC996E400131FB8 /* BasicInfoTableViewCell.xib */,
+			);
+			path = BasicInfoCell;
+			sourceTree = "<group>";
+		};
+		75E9EC442BC98B0C00131FB8 /* PlatformCell */ = {
+			isa = PBXGroup;
+			children = (
+				75E9EC502BC994EC00131FB8 /* PlatformTableViewCell.swift */,
+				75E9EC512BC994EC00131FB8 /* PlatformTableViewCell.xib */,
+			);
+			path = PlatformCell;
+			sourceTree = "<group>";
+		};
+		75E9EC4B2BC9941C00131FB8 /* DescriptionCell */ = {
+			isa = PBXGroup;
+			children = (
+				75E9EC4C2BC994DC00131FB8 /* DescriptionTableViewCell.swift */,
+				75E9EC4D2BC994DC00131FB8 /* DescriptionTableViewCell.xib */,
+			);
+			path = DescriptionCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -342,12 +392,15 @@
 				75BF41912B8BA2F50016EAAC /* LaunchScreen.storyboard in Resources */,
 				75BF42042B8E15930016EAAC /* CollectionViewCell.xib in Resources */,
 				75BF418E2B8BA2F50016EAAC /* Assets.xcassets in Resources */,
+				75E9EC4F2BC994DC00131FB8 /* DescriptionTableViewCell.xib in Resources */,
 				75BF42112B94C6450016EAAC /* GameTableViewCell.xib in Resources */,
 				75BF41AF2B8BD7CE0016EAAC /* FeaturedViewController.xib in Resources */,
 				75BF41A32B8BD0330016EAAC /* HomeViewController.xib in Resources */,
 				759050292BA1F6A200CDFD00 /* ScreenshotCollectionViewCell.xib in Resources */,
 				75BF41B12B8CD7ED0016EAAC /* MainTabBarController.xib in Resources */,
 				75BF41AB2B8BD7B70016EAAC /* SearchViewController.xib in Resources */,
+				75E9EC532BC994EC00131FB8 /* PlatformTableViewCell.xib in Resources */,
+				75E9EC572BC996E400131FB8 /* BasicInfoTableViewCell.xib in Resources */,
 				759050222BA0C67D00CDFD00 /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +419,7 @@
 				75C041262BAF0ABA00EE0636 /* PlatformModel.swift in Sources */,
 				75BF41822B8BA2F20016EAAC /* AppDelegate.swift in Sources */,
 				75BF42032B8E15930016EAAC /* CollectionViewCell.swift in Sources */,
+				75E9EC562BC996E400131FB8 /* BasicInfoTableViewCell.swift in Sources */,
 				75BF419C2B8BB90E0016EAAC /* MainTabBarController.swift in Sources */,
 				75BF42062B8E18640016EAAC /* NetworkService.swift in Sources */,
 				75BF420B2B8E40220016EAAC /* GameResponseModel.swift in Sources */,
@@ -374,6 +428,7 @@
 				75C0411E2BAB415F00EE0636 /* GameDetailsModel.swift in Sources */,
 				759050192B9A3EE600CDFD00 /* GenreResponseModel.swift in Sources */,
 				75C041222BAF0A6400EE0636 /* ESRBRatingModel.swift in Sources */,
+				75E9EC4E2BC994DC00131FB8 /* DescriptionTableViewCell.swift in Sources */,
 				75BF420D2B94BD030016EAAC /* HomeViewModel.swift in Sources */,
 				75C041202BAF0A2000EE0636 /* RatingsModel.swift in Sources */,
 				75E9EC402BB72DCA00131FB8 /* DetailsViewModel.swift in Sources */,
@@ -388,6 +443,7 @@
 				75BF41A22B8BD0330016EAAC /* HomeViewController.swift in Sources */,
 				75E9EC3E2BB72CAD00131FB8 /* UIColor+.swift in Sources */,
 				75E9EC3C2BB727FF00131FB8 /* String+.swift in Sources */,
+				75E9EC522BC994EC00131FB8 /* PlatformTableViewCell.swift in Sources */,
 				759050212BA0C67D00CDFD00 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
