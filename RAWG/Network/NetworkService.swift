@@ -121,6 +121,7 @@ final class NetworkService {
         
         urlComponents.queryItems =
         [URLQueryItem(name: APIContants.key.rawValue, value: APIContants.apiKey.rawValue),
+         URLQueryItem(name: APIContants.dates.rawValue, value: "2022-01-01,2024-01-01"),
          URLQueryItem(name: APIContants.ordering.rawValue, value: APIContants.onMetacritic.rawValue)]
         
         guard let url = urlComponents.url else { return }
