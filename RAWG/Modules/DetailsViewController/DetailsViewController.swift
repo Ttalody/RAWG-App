@@ -9,22 +9,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-    var game: GameModel?
-    var gameDetails: GameDetailsModel? {
-        didSet {
-            DispatchQueue.main.async { [weak self] in
-                self?.contentTableView.reloadData()
-            }
-        }
-    }
-    
-    var gameScreenshots: [ScreenshotsModel]? {
-        didSet {
-            DispatchQueue.main.async { [weak self] in
-                self?.screenshotCollectionView.reloadData()
-            }
-        }
-    }
+    var viewModel: DetailsViewModel!
     
     @IBOutlet weak private var contentTableView: UITableView!
     
@@ -39,17 +24,38 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getInfo()
+        viewModel.loadDetails()
+        
+        setupViewController()
+    }
+    
+    func configure(with viewModel: DetailsViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    private func setupViewController() {
+        
         
         setupScreenhsotCollectionView()
         
         setupContentTableView()
         setupRatingLabel()
         
+        viewModel.updateContentView = { [weak self] in
+            DispatchQueue.main.async {
+                self?.contentTableView.reloadData()
+            }
+        }
+        
+        viewModel.updateCollectionView = { [weak self] in
+            DispatchQueue.main.async {
+                self?.screenshotCollectionView.reloadData()
+            }
+        }
     }
     
     private func setupRatingLabel() {
-        guard let rating = game?.metacritic else { return }
+        guard let rating = viewModel.game.metacritic else { return }
         
         ratingLabel.text = String(rating)
         
@@ -69,7 +75,7 @@ class DetailsViewController: UIViewController {
     }
     
     private func setupContentTableView() {
-        titleLabel.text = game?.name?.removeHTMLTags() ?? ""
+        titleLabel.text = viewModel.game.name?.removeHTMLTags() ?? ""
         
         contentTableView.rowHeight = UITableView.automaticDimension
         
@@ -79,16 +85,6 @@ class DetailsViewController: UIViewController {
         contentTableView.register(DescriptionTableViewCell.self)
         contentTableView.register(PlatformTableViewCell.self)
         contentTableView.register(BasicInfoTableViewCell.self)
-    }
-    
-    private func getInfo() {
-        guard let game = game, let gameId = game.id else { return }
-        NetworkService.shared.requestDetails(id: gameId) { result in
-            switch result {
-            case .success(let gameDetails): self.gameDetails = gameDetails
-            case .failure(let error): print(error.localizedDescription)
-            }
-        }
     }
 }
 
@@ -130,8 +126,8 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sectionType = DetailsViewController.Section(rawValue: section),
-              let platformsCount = game?.platforms?.count,
-              let developerCount = gameDetails?.developers?.count else { return 0 }
+              let platformsCount = viewModel.game.platforms?.count,
+              let developerCount = viewModel.gameDetails?.developers?.count else { return 0 }
         switch sectionType {
         case .description:
             return 1
@@ -158,13 +154,13 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         case .description:
             let cell: DescriptionTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             
-            cell.configure(game: gameDetails)
+            cell.configure(game: viewModel.gameDetails)
             
             return cell
         case .platforms:
             let cell: PlatformTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             
-            let platform = gameDetails?.platforms?[indexPath.row]
+            let platform = viewModel.gameDetails?.platforms?[indexPath.row]
             
             cell.configure(platform: platform)
             
@@ -173,7 +169,7 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         case .developer:
             let cell: BasicInfoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             
-            cell.configure(gameDetails?.developers?[indexPath.row].name)
+            cell.configure(viewModel.gameDetails?.developers?[indexPath.row].name)
             
             return cell
             
@@ -181,7 +177,7 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         case .genres:
             let cell: BasicInfoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             
-            let genreNames = gameDetails?.genres?.map { $0.name }
+            let genreNames = viewModel.gameDetails?.genres?.map { $0.name }
             
             let genreNamesStr = genreNames?.joined(separator: ", ")
             
@@ -192,7 +188,7 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         case .tags:
             let cell: BasicInfoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             
-            let tagsNames = gameDetails?.tags?.map { $0.name }
+            let tagsNames = viewModel.gameDetails?.tags?.map { $0.name }
             
             let tagsStr = tagsNames?.joined(separator: ", ")
             
@@ -203,7 +199,7 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         case .releaseDate:
             let cell: BasicInfoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             
-            let releaseDate = DateFormatterService.shared.makePretty(game?.released ?? "")
+            let releaseDate = DateFormatterService.shared.makePretty(viewModel.game.released ?? "")
             
             cell.configure(releaseDate)
             
@@ -213,21 +209,20 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
         case .playtime:
             let cell: BasicInfoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             
-            let playtime = String(game?.playtime ?? 0)
+            let playtime = String(viewModel.game.playtime ?? 0)
             
             cell.configure(playtime)
             
             return cell
-
+            
         case .ageRating:
             let cell: BasicInfoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             
-            let ageRating = gameDetails?.esrbRating?.name
+            let ageRating = viewModel.gameDetails?.esrbRating?.name
             
             cell.configure(ageRating ?? "")
             
             return cell
-            
         }
     }
     
@@ -256,12 +251,12 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension DetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        game?.screenshots?.count ?? 0
+        viewModel.game.screenshots?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ScreenshotCollectionViewCell.identifier, for: indexPath) as? ScreenshotCollectionViewCell else { return UICollectionViewCell()}
-        cell.configure(imageUrl: game?.screenshots?[indexPath.row].image ?? "")
+        cell.configure(imageUrl: viewModel.game.screenshots?[indexPath.row].image ?? "")
         return cell
     }
     

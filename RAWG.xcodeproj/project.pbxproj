@@ -16,7 +16,6 @@
 		7590502C2BA1F84500CDFD00 /* ScreenshotsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7590502B2BA1F84500CDFD00 /* ScreenshotsModel.swift */; };
 		75BF41822B8BA2F20016EAAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF41812B8BA2F20016EAAC /* AppDelegate.swift */; };
 		75BF41842B8BA2F20016EAAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF41832B8BA2F20016EAAC /* SceneDelegate.swift */; };
-		75BF418C2B8BA2F20016EAAC /* RAWG.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75BF418A2B8BA2F20016EAAC /* RAWG.xcdatamodeld */; };
 		75BF418E2B8BA2F50016EAAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75BF418D2B8BA2F50016EAAC /* Assets.xcassets */; };
 		75BF41912B8BA2F50016EAAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75BF418F2B8BA2F50016EAAC /* LaunchScreen.storyboard */; };
 		75BF419C2B8BB90E0016EAAC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF419A2B8BB90E0016EAAC /* MainTabBarController.swift */; };
@@ -68,7 +67,6 @@
 		75BF417E2B8BA2F20016EAAC /* RAWG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAWG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BF41812B8BA2F20016EAAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75BF41832B8BA2F20016EAAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		75BF418B2B8BA2F20016EAAC /* RAWG.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RAWG.xcdatamodel; sourceTree = "<group>"; };
 		75BF418D2B8BA2F50016EAAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75BF41902B8BA2F50016EAAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75BF41922B8BA2F50016EAAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -183,6 +181,7 @@
 			children = (
 				75E9EC3A2BB727EE00131FB8 /* Extensions */,
 				75E9EC2F2BB347DD00131FB8 /* Heplers */,
+				75DC4E9F2BCECE4E00C89439 /* CoreData */,
 				75BF41B42B8CE36F0016EAAC /* Network */,
 				75BF41B22B8CE3120016EAAC /* Modules */,
 				75BF41812B8BA2F20016EAAC /* AppDelegate.swift */,
@@ -190,7 +189,6 @@
 				75BF418D2B8BA2F50016EAAC /* Assets.xcassets */,
 				75BF418F2B8BA2F50016EAAC /* LaunchScreen.storyboard */,
 				75BF41922B8BA2F50016EAAC /* Info.plist */,
-				75BF418A2B8BA2F20016EAAC /* RAWG.xcdatamodeld */,
 			);
 			path = RAWG;
 			sourceTree = "<group>";
@@ -245,6 +243,13 @@
 				75E9EC382BB723C800131FB8 /* TagModel.swift */,
 			);
 			path = NetworkModels;
+			sourceTree = "<group>";
+		};
+		75DC4E9F2BCECE4E00C89439 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		75E9EC2F2BB347DD00131FB8 /* Heplers */ = {
@@ -431,7 +436,6 @@
 				75BF42062B8E18640016EAAC /* NetworkService.swift in Sources */,
 				75BF420B2B8E40220016EAAC /* GameResponseModel.swift in Sources */,
 				75C1784D2BCB48C2004F31A5 /* UITableView+.swift in Sources */,
-				75BF418C2B8BA2F20016EAAC /* RAWG.xcdatamodeld in Sources */,
 				75E9EC312BB347F800131FB8 /* NetworkError.swift in Sources */,
 				75C0411E2BAB415F00EE0636 /* GameDetailsModel.swift in Sources */,
 				759050192B9A3EE600CDFD00 /* GenreResponseModel.swift in Sources */,
@@ -679,19 +683,6 @@
 			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		75BF418A2B8BA2F20016EAAC /* RAWG.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				75BF418B2B8BA2F20016EAAC /* RAWG.xcdatamodel */,
-			);
-			currentVersion = 75BF418B2B8BA2F20016EAAC /* RAWG.xcdatamodel */;
-			path = RAWG.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 75BF41762B8BA2F20016EAAC /* Project object */;
 }

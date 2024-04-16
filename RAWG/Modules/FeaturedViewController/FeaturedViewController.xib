@@ -3,8 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,14 +17,47 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ku6-xJ-WjD">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" name="mainColor"/>
+                    <color key="separatorColor" name="mainColor"/>
+                    <view key="tableHeaderView" contentMode="scaleToFill" id="2Ls-U7-CLt">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1n-MZ-pvY">
+                                <rect key="frame" x="8" y="0.0" width="377" height="64"/>
+                                <color key="backgroundColor" name="mainColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="mainColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="D1n-MZ-pvY" secondAttribute="bottom" id="6S5-SO-nj6"/>
+                            <constraint firstItem="D1n-MZ-pvY" firstAttribute="top" secondItem="2Ls-U7-CLt" secondAttribute="top" id="fUl-mG-8DA"/>
+                            <constraint firstItem="D1n-MZ-pvY" firstAttribute="leading" secondItem="2Ls-U7-CLt" secondAttribute="leading" constant="8" id="hVt-h2-VnZ"/>
+                            <constraint firstAttribute="trailing" secondItem="D1n-MZ-pvY" secondAttribute="trailing" constant="8" id="sPp-ff-Zvw"/>
+                        </constraints>
+                    </view>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBlueColor"/>
-            <point key="canvasLocation" x="95" y="20"/>
+            <color key="backgroundColor" name="mainColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ku6-xJ-WjD" secondAttribute="trailing" id="HR8-uy-Dui"/>
+                <constraint firstItem="ku6-xJ-WjD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kh5-2B-upy"/>
+                <constraint firstItem="ku6-xJ-WjD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oZk-8G-6fO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ku6-xJ-WjD" secondAttribute="bottom" id="wP4-pO-vMh"/>
+            </constraints>
+            <point key="canvasLocation" x="93.89312977099236" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="mainColor">
+            <color red="0.058823529411764705" green="0.058823529411764705" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

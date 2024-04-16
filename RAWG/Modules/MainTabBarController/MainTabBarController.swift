@@ -18,7 +18,7 @@ class MainTabBarController: UITabBarController {
         setupTabs()
         
     }
-
+    
     private func setupTabs() {
         let homeVC = self.createNavigationChain(title: "Home", image: UIImage(systemName: "house") ?? UIImage(), vc: HomeViewController(nibName: String(describing: HomeViewController.self), bundle: nil))
         let searchVC = self.createNavigationChain(title: "Search", image: UIImage(systemName: "magnifyingglass") ?? UIImage(), vc: SearchViewController(nibName: String(describing: SearchViewController.self), bundle: nil))

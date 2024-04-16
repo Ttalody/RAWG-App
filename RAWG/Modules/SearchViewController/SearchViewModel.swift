@@ -49,9 +49,11 @@ final class SearchViewModel {
     }
     
     func pushToDetailsVC(at index: Int, navController: UINavigationController) {
-        let detailsVC = DetailsViewController(nibName: String(describing: DetailsViewController.self), bundle: nil)
-        detailsVC.game = games?[index]
+        guard let game = games?[index] else { return }
+        let gameDetailViewModel = DetailsViewModel(game: game)
+        let gameDetailViewController = DetailsViewController()
+        gameDetailViewController.configure(with: gameDetailViewModel)
         navController.isNavigationBarHidden = false
-        navController.pushViewController(detailsVC, animated: true)
+        navController.pushViewController(gameDetailViewController, animated: true)
     }
 }
