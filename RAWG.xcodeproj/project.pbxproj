@@ -42,6 +42,7 @@
 		75C041262BAF0ABA00EE0636 /* PlatformModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C041252BAF0ABA00EE0636 /* PlatformModel.swift */; };
 		75C041282BAF0ACD00EE0636 /* RequirementsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C041272BAF0ACD00EE0636 /* RequirementsModel.swift */; };
 		75C1784D2BCB48C2004F31A5 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C1784C2BCB48C2004F31A5 /* UITableView+.swift */; };
+		75C1784F2BCC65FE004F31A5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C1784E2BCC65FE004F31A5 /* SearchViewModel.swift */; };
 		75E9EC312BB347F800131FB8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC302BB347F800131FB8 /* NetworkError.swift */; };
 		75E9EC352BB5C71B00131FB8 /* DateFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC342BB5C71B00131FB8 /* DateFormatterService.swift */; };
 		75E9EC372BB723C000131FB8 /* DeveloperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9EC362BB723C000131FB8 /* DeveloperModel.swift */; };
@@ -94,6 +95,7 @@
 		75C041252BAF0ABA00EE0636 /* PlatformModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformModel.swift; sourceTree = "<group>"; };
 		75C041272BAF0ACD00EE0636 /* RequirementsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsModel.swift; sourceTree = "<group>"; };
 		75C1784C2BCB48C2004F31A5 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
+		75C1784E2BCC65FE004F31A5 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		75E9EC302BB347F800131FB8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		75E9EC342BB5C71B00131FB8 /* DateFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterService.swift; sourceTree = "<group>"; };
 		75E9EC362BB723C000131FB8 /* DeveloperModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperModel.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				75BF41A82B8BD7B70016EAAC /* SearchViewController.swift */,
+				75C1784E2BCC65FE004F31A5 /* SearchViewModel.swift */,
 				75BF41A92B8BD7B70016EAAC /* SearchViewController.xib */,
 			);
 			path = SearchViewController;
@@ -416,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75E9EC392BB723C800131FB8 /* TagModel.swift in Sources */,
+				75C1784F2BCC65FE004F31A5 /* SearchViewModel.swift in Sources */,
 				75BF42102B94C6450016EAAC /* GameTableViewCell.swift in Sources */,
 				75BF41AA2B8BD7B70016EAAC /* SearchViewController.swift in Sources */,
 				75E9EC372BB723C000131FB8 /* DeveloperModel.swift in Sources */,

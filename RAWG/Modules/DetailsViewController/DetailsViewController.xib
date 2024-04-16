@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7LS-CK-9AE">
-                                <rect key="frame" x="0.0" y="54.333333333333343" width="393" height="240.00000000000003"/>
+                                <rect key="frame" x="0.0" y="66" width="393" height="240"/>
                                 <color key="backgroundColor" name="mainColor"/>
                                 <color key="tintColor" systemColor="tintColor"/>
                                 <constraints>
@@ -49,16 +49,16 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FRR-y5-tfU">
-                                <rect key="frame" x="8" y="8" width="377" height="38.333333333333336"/>
+                                <rect key="frame" x="8" y="8" width="377" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akY-tF-gad">
-                                        <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="38.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="50"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ld-Kq-I4N">
-                                        <rect key="frame" x="300" y="0.0" width="77" height="38.333333333333336"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ld-Kq-I4N">
+                                        <rect key="frame" x="300" y="0.0" width="77" height="50"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
