@@ -12,8 +12,7 @@ final class HomeViewController: UIViewController {
     private var viewModel: HomeViewModel!
     
     @IBOutlet weak private var tableView: UITableView!
-    @IBOutlet weak private var collectionView: UICollectionView!
-    
+    @IBOutlet weak private var trendingCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,16 +54,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        6
+        viewModel.trendingGames?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as? CollectionViewCell else { return UICollectionViewCell()}
-        cell.configure(game: viewModel.games?[indexPath.row])
+        cell.configure(game: viewModel.trendingGames?[indexPath.row])
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let navController = self.navigationController else { return }
+        viewModel.pushToDetailsVC(at: indexPath.row, navController: navController, isTrending: true)
+    }
 }
 
 private extension HomeViewController {
@@ -74,11 +76,17 @@ private extension HomeViewController {
         viewModel.gameListDidChange = { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
-                self?.collectionView.reloadData()
+            }
+        }
+        
+        viewModel.trendingGamesDidChange = { [weak self] in
+            DispatchQueue.main.async {
+                self?.trendingCollectionView.reloadData()
             }
         }
         
         viewModel.loadGameList()
+        viewModel.loadTrending()
         
         setupListTableView()
         setupTrendingCollectionView()
@@ -94,8 +102,8 @@ private extension HomeViewController {
     }
     
     func setupTrendingCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: String(describing: CollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: CollectionViewCell.identifier)
+        trendingCollectionView.delegate = self
+        trendingCollectionView.dataSource = self
+        trendingCollectionView.register(UINib(nibName: String(describing: CollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: CollectionViewCell.identifier)
     }
 }

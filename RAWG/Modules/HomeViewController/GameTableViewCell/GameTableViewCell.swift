@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class GameTableViewCell: UITableViewCell {
+final class GameTableViewCell: UITableViewCell {
     
     static let identifier = "GameTableViewCell"
     
@@ -19,17 +19,15 @@ class GameTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-//        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0))
         contentView.layer.cornerRadius = 20
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         self.selectionStyle = .none
         
     }

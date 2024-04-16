@@ -5,11 +5,4 @@
 //  Created by Артур on 26.03.2024.
 //
 
-import Foundation
-
-enum NetworkError: Error {
-    case invalidRequestUrl
-    case clientSideError
-    case serverSideError
-    case conversionError
-}
+import Foundat

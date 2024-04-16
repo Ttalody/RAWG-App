@@ -8,15 +8,17 @@
 import UIKit
 import SDWebImage
 
-class CollectionViewCell: UICollectionViewCell {
+final class CollectionViewCell: UICollectionViewCell {
     
     static let identifier = "CollectionViewCell"
     
     @IBOutlet weak private var titleLabel: UILabel!
-
-    @IBOutlet weak var posterImageView: UIImageView!
     
-    @IBOutlet weak var customView: UIView!
+    @IBOutlet weak private var ratingLabel: UILabel!
+    
+    @IBOutlet weak private var posterImageView: UIImageView!
+    
+    @IBOutlet weak private var customView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +30,17 @@ class CollectionViewCell: UICollectionViewCell {
             self.posterImageView.sd_setImage(with: url)
         }
         self.titleLabel.text = game?.name
+        if let rating = game?.metacritic {
+            self.ratingLabel.text = String(rating)
+            
+            if rating >= 70 {
+                ratingLabel.textColor = .green
+            } else if rating >= 40 && rating < 70 {
+                ratingLabel.textColor = .yellow
+            } else {
+                ratingLabel.textColor = .red
+            }
+        }
     }
-
+    
 }
